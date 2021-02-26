@@ -174,7 +174,6 @@ def _new_git_repository_implementation(ctx):
     update = _clone_or_update(ctx)
     workspace_and_buildfile(ctx)
     patch(ctx)
-    ctx.delete(ctx.path(".git"))
     return _update_git_attrs(ctx.attr, _new_git_repository_attrs.keys(), update)
 
 def _git_repository_implementation(ctx):
